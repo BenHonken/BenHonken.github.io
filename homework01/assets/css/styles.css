@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  }
+  body {
+    font-size: 24px;
+    line-height: 32px;
+    color: #777777;
+    background-image: url(../images/background.png);
+  }
+  hr{
+    border-top: 2px solid #777777      
+  }
+  nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-color: #cccccc;
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  .navbutton{
+      float: left;
+      margin: 20px;
+      padding: 20px;
+  }
+  a:visited{
+    color: #777777;
+  }
+a {
+    text-decoration: none;
+    font-size: 18px;
+  }
+  #navbuttoncontainer{
+      float: right;
+  }
+  .navwrapper{
+      width: 960px;
+      margin: 0 auto;
+  }
+  .vr{
+    border-left: 2px solid #777777;
+    float: left;
+    height: 60px;
+    position: relative;
+    top: 30px;
+  }
+  #name{
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    background-color: #4aaaa5;
+    padding: 20px;
+    color: #ffffff;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+  }
+  .wrapper {
+    width: 960px;
+    padding: 20px;
+    margin: 150px auto;
+    background-color: #ffffff;
+    border-color: #dddddd;
+    overflow: auto;
+  }
+  h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 45px;
+    color: #4aaaa5;
+    background-color: #ffffff;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+  }
+  p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  img{
+      height:200px;
+      width:300px;
+      object-fit: cover;
+  }
+  #mypic{
+      float: left;
+      margin: 20px;
+  }
+  .container{
+      height:200px;
+      width:300px;
+      padding: 20px;
+      margin: 20px;
+      float: left;
+  }
+  .banner {
+    height: 50px;
+    padding: 5px;
+    text-align: center;
+    background-color: #4aaaa5;
+    color: #ffffff;
+    position: relative;
+    width: 300px;
+    bottom: 100px;
+  }
+#statroller{
+    height: 70px;
+}
+#name{
+    background-color: #4aaaa5;
+}
+input{
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+}
+textarea{
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+}
+button{
+    background-color: #4aaaa5;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 27px;
+    border: 0;
+    padding: 12px 30px;    
+}
+button:hover{
+    cursor: pointer;
+}
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    border-top: 8px solid #4aaaa5;
+    background-color: #666666;
+    padding: 20px;
+  }
