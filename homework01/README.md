@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a portfolio for Ben Honken.  It contains a number of projects I have worked on, and I intend to update it regularly.  
+This is a portfolio for Ben Honken.  It contains a number of projects I have worked on, and I intend to update it regularly.  The first two pictures in the portfolio section are just place holders, but the last three are clickable links to working python projects.
 
 ## Usage
 
