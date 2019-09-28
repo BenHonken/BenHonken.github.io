@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ben Honken - Contact</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+            <div class="navwrapper">
+                <div class="navbar-brand" id="name" >Ben Honken</div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="navbuttoncontainer">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link navbutton" id="about" href="index.html">About <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li>
+                            <div class="vr"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbutton" id="portfolio" href="portfolio.html">Portfolio</a>
+                        </li>
+                        <li>
+                            <div class="vr"></div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navbutton" id="contact" href="contact.html">
+                            Contact
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container wrapper">
+            <h1>
+                Contact
+            </h1>
+            <hr>
+            <form>
+                <div class="form-row align-items-center">
+                    <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInput">Name</label>
+                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+                    </div>
+                    <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Email">
+                    </div>
+                    </div>
+                    <div class="col-auto">
+                    <div class="form-check mb-2">
+                        <label class="form-check-label" for="autoSizingCheck">Message</label>
+                        <textarea class="form-control" id="autoSizingCheck" rows="3"></textarea>
+                    </div>
+                    </div>
+                    <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="footer mt-auto py-3">
+            Copyright Ben Honken 2019, all rights reserved
+        </footer>
+    </body>
+    </html>
