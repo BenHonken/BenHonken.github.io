@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  }
+  body {
+    font-size: 24px;
+    line-height: 32px;
+    color: #777777;
+    background-image: url(../images/background.png);
+  }
+  hr{
+    border-top: 2px solid #777777      
+  }
+  nav {
+      width: 100%;
+      background-color: #ffffff;
+      border-color: #cccccc;
+      position: absolute;
+      top: 0;
+      left: 0;
+  }
+  .navbar-collapse.collapse {
+    display: block!important;
+  }
+  .navbar-nav>li, .navbar-nav {
+    float: left !important;
+  }
+  .navbar-nav.navbar-right:last-child {
+    margin-right: -15px !important;
+  }
+  .navbar-right {
+    float: right!important;
+  }
+#navbarSupportedContent {
+    float: right;
+  }
+  .navbutton{
+      float: left;
+      margin: 20px;
+      padding: 20px;
+  }
+  .nav-link{
+    color: #777777;
+  }
+a:visited{
+    color: #777777 !important;
+    text-decoration: none;
+    font-size: 18px;
+  }
+a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #777777 !important;
+}
+  #navbuttoncontainer{
+      float: right;
+  }
+  .navwrapper{
+      width: 960px;
+      margin: 0 auto;
+  }
+  .bg-light{
+    background-color: #ffffff !important;
+  }
+  .vr{
+    border-left: 2px solid #777777;
+    float: left;
+    height: 60px;
+    position: relative;
+    top: 30px;
+  }
+  #name{
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+    background-color: #4aaaa5;
+    padding: 20px;
+    color: #ffffff;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    left: auto;
+  }
+  .wrapper{
+    width: 960px;
+    margin: 150px auto;
+  }
+  .container {
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-color: #dddddd;
+    overflow: auto;
+  }
+  h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 45px;
+    color: #4aaaa5;
+    background-color: #ffffff;
+    font-family: 'Georgia', Times, 'Times New Roman', serif;
+  }
+  p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  img{
+      object-fit: cover;
+      width: 100%;
+      height: 30%;
+  }
+  #mypic{
+      float: left;
+      margin: 20px;
+      max-width: 30% !important;
+      height: auto;
+  }
+  .banner {
+    height: 30%;
+    padding: 5px;
+    text-align: center;
+    background-color: #4aaaa5;
+    color: #ffffff;
+    position: relative;
+    max-width: 100% !important;
+    bottom: 100px;
+    overflow-x: hidden;
+  }
+#statroller{
+    height: 70px;
+    overflow: visible;
+}
+h2{
+  padding: 20px;
+  margin: 20px auto;
+}
+#name{
+    background-color: #4aaaa5;
+}
+input{
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+}
+textarea{
+    padding: 5px 15px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+}
+button{
+    background-color: #4aaaa5;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 27px;
+    border: 0;
+    padding: 12px 30px;    
+}
+button:hover{
+    cursor: pointer;
+}
+footer {
+  text-align: center;
+  width: 100%;
+  border-top: 8px solid #4aaaa5;
+  background-color: #666666;
+  padding: 20px;
+  color: #ffffff;
+}
+@media screen and (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+  }
+}
