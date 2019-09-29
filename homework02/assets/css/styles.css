@@ -133,9 +133,6 @@ h2{
   padding: 20px;
   margin: 20px auto;
 }
-#name{
-    background-color: #4aaaa5;
-}
 input{
     padding: 5px 15px;
     width: 100%;
@@ -180,5 +177,15 @@ footer {
   footer{
     font-size: 12px;
     line-height: 18px;
+  }
+  #name{
+    visibility: hidden;
+  }
+  a{
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .vr{
+    visibility: hidden;
   }
 }
