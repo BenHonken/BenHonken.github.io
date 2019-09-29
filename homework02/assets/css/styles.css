@@ -166,9 +166,19 @@ footer {
   background-color: #666666;
   padding: 20px;
   color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+}
+.sticky-footers-are-dumb{
+  position: absolute;
+  bottom: 0;
 }
 @media screen and (max-width: 576px) {
   .wrapper {
     width: 100%;
+  }
+  footer{
+    font-size: 12px;
+    line-height: 18px;
   }
 }
