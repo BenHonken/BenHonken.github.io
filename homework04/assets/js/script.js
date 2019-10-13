@@ -48,8 +48,10 @@ highScoreHeader.text("High Scores");
 var highScoreList = "<ol>";
 var goBack = $("<button>");
 goBack.addClass("goBack");
+goBack.text("Go Back");
 var clearScores = $("<button>");
 clearScores.addClass("clearScores");
+clearScores.text("Clear Scores");
 function navigate(){
     if(status==0){
         $("ol").remove();
@@ -166,8 +168,6 @@ $(document).ready(function(){
         status = 1;
         navigate();
     })
-})
-$(document).ready(function(){
     $(".answerButtons").on("click", function(){
         if(this.text() == answer){
             correct=true;
@@ -177,8 +177,6 @@ $(document).ready(function(){
         }
         nextQuestion();
     })
-})
-$(document).ready(function(){
     $(".submit").on("click", function(){
         var score = [$(".entry").text(), time, season, score];
         highScoreArray.push(score);
@@ -187,21 +185,15 @@ $(document).ready(function(){
         status = 3;
         navigate();
     })
-})
-$(document).ready(function(){
     $(".goBack").on("click", function(){
         status = 0;
         navigate();
     })
-})
-$(document).ready(function(){
     $(".clearScores").on("click", function(){
         highScoreArray=[]
         localStorage.setItem("scores", JSON.stringify(highScoreArray))
         $("li").remove();
     })
-})
-$(document).ready(function(){
     $("a").on("click", function(){
         status = 3;
         navigate();
