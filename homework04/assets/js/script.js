@@ -128,6 +128,8 @@ function navigate(){
             else if(this.className == "submit"){
                 var result = [$("input").val(), time, season, score];
                 highScoreArray.push(result);
+                console.log(highScoreArray);
+                console.log(highScoreArray.length);
                 var highScoreArrayLength=highScoreArray.length; 
                 var sortedArray=[];
                 if (highScoreArrayLength>0){
