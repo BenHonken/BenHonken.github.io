@@ -126,7 +126,8 @@ function nextQuestion(){
         choices = choices.sort(function(a, b){return 0.5 - Math.random()});
         console.log(choices);
         for(var i = 0; i < choices.length; i++){
-            $("#a" + i).text(choices[i]);
+            var j = i + 1;
+            $("#a" + j).text(choices[i]);
             console.log(choices[i]);
         }
         answer = questionList[question]["answer"];
