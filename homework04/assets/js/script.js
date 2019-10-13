@@ -63,6 +63,7 @@ function navigate(){
         correct = "paused";
         timerDiv.text(time);
         $("#content").append(header);
+        explanation.text("Choose a season and test your breaking bad knowledge!");
         $("#content").append(explanation);
         for(var i = 0; i < seasonButtons.length; i++){
             $("#content").append(seasonButtons[i]);
@@ -115,7 +116,8 @@ function navigate(){
                 navigate();
             }
             else if(this.className == "answerButtons"){
-                if(this.text == answer){
+                console.log(this.value)
+                if(this.value == answer){
                     correct=true;
                 }
                 else{
@@ -124,7 +126,7 @@ function navigate(){
                 nextQuestion();
             }
             else if(this.className == "submit"){
-                var result = [$(".entry").val(), time, season, score];
+                var result = [$("input").val(), time, season, score];
                 highScoreArray.push(result);
                 //sort by time
                 localStorage.setItem("scores", JSON.stringify(highScoreArray))
@@ -151,12 +153,15 @@ function startTimer(){
     time=75
     timer=setInterval(function(){
         time--;
-        if(time===0 || status===2){
+        if(time < 0){
             clearInterval(timer);
             status=2;
             navigate();
         }
-    $(timer).text(time);
+        if(status == 2){
+            clearInterval(timer);
+        }
+    $(timerDiv).text(time);
     }, 1000)
 }
 function nextQuestion(){
@@ -167,6 +172,7 @@ function nextQuestion(){
         for(var i = 0; i < choices.length; i++){
             var j = i + 1;
             $("#a" + j).text(choices[i]);
+            $("#a" + j).attr("value", choices[i]);
         }
         answer = questionList[question]["answer"];
         question++;}
