@@ -175,35 +175,61 @@ function nextQuestion(){
             $("#a" + j).attr("value", choices[i]);
         }
         answer = questionList[question]["answer"];
-        question++;}
+        question++;
+        if(correct===true){
+            score++;
+            rightOrWrong.text("Correct!");
+            $("#content").append(rightOrWrong);
+            rightOrWrongTimer = setInterval(function(){
+                countdown--;
+                if(countdown==0){
+                    clearInterval(rightOrWrongTimer);
+                    $("h3").remove();
+                }
+            }, 1000)
+        }
+        else if(correct===false){
+            time=time-15;
+            rightOrWrong.text("Incorrect!");
+            $("#content").append(rightOrWrong);
+            rightOrWrongTimer = setInterval(function(){
+                countdown--;
+                if(countdown==0){
+                    clearInterval(rightOrWrongTimer);
+                    $("h3").remove();
+                }
+            }, 1000)
+        }
+    }
     else{
+        if(correct===true){
+            score++;
+            rightOrWrong.text("Correct!");
+            $("#content").append(rightOrWrong);
+            rightOrWrongTimer = setInterval(function(){
+                countdown--;
+                if(countdown==0){
+                    clearInterval(rightOrWrongTimer);
+                    $("h3").remove();
+                }
+            }, 1000)
+        }
+        else if(correct===false){
+            time=time-15;
+            rightOrWrong.text("Incorrect!");
+            $("#content").append(rightOrWrong);
+            rightOrWrongTimer = setInterval(function(){
+                countdown--;
+                if(countdown==0){
+                    clearInterval(rightOrWrongTimer);
+                    $("h3").remove();
+                }
+            }, 1000)
+        }
         status = 2;
         navigate();
     }
     var countdown = 2;
-    if(correct===true){
-        score++;
-        rightOrWrong.text("Correct!");
-        $("#content").append(rightOrWrong);
-        rightOrWrongTimer = setInterval(function(){
-            countdown--;
-            if(countdown==0){
-                clearInterval(rightOrWrongTimer);
-                $("h3").remove();
-            }
-        }, 1000)
-    }
-    else if(correct===false){
-        time=time-15;
-        rightOrWrong.text("Incorrect!");
-        $("#content").append(rightOrWrong);
-        rightOrWrongTimer = setInterval(function(){
-            countdown--;
-            if(countdown==0){
-                clearInterval(rightOrWrongTimer);
-                $("h3").remove();
-            }
-        }, 1000)
-    }
+    
 }
 navigate();
