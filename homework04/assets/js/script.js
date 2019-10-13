@@ -5,7 +5,6 @@ var season = 0;
 var score=0;
 var time=0;
 var correct="paused";
-var done=false;
 var highScoreLink = $("<a>");
 highScoreLink.text("View High Scores");
 var timerDiv = $("<div>");
@@ -18,23 +17,26 @@ explanation.addClass("explanation");
 explanation.text("Choose a season and test your breaking bad knowledge!");
 var seasonButtons = [];
 for(var i = 1; i<6; i++){
-    var btn = $("<btn>");
+    var btn = $("<button>");
     btn.addClass("seasonButtons");
-    btn.attr("id", "s" + i);
+    btn.attr("value", i);
     btn.text("Season " + i);
     seasonButtons.push(btn);
 }
+var questionList = [];
 var questionText = $("<h2>");
 var answerButtons = [];
+var answer = "";
 for(var i = 1; i<5; i++){
-    var btn = $("<btn>");
+    var btn = $("<button>");
     btn.addClass("answerButtons");
     btn.attr("id", "a" + i);
     answerButtons.push(btn);
 }
+var rightOrWrong = $("<h3>");
 var entry = $("<input>");
 entry.attr("placeholder", "initials");
-var submit = $("<btn>");
+var submit = $("<button>");
 submit.addClass("submit");
 var highScoreArray = JSON.parse(localStorage.getItem("scores"));
 if(highScoreArray===null){
@@ -43,16 +45,18 @@ if(highScoreArray===null){
 var highScoreHeader = $("<h1>");
 highScoreHeader.text("High Scores");
 var highScoreList = "<ol>";
-var goBack = $("<btn>");
+var goBack = $("<button>");
 goBack.addClass("goBack");
-var clearScores = $("<btn>");
+var clearScores = $("<button>");
 clearScores.addClass("clearScores");
 function navigate(){
     if(status==0){
+        $("ol").remove();
+        $("h1").remove();
+        $("button").remove();
         question = 0;
         time = 0;
         score = 0;
-        done = false;
         correct = "paused";
         timerDiv.text(time);
         $("#content").append(header);
@@ -93,7 +97,7 @@ function navigate(){
         $("#content").append(highScoreHeader);
         $("#content").append(highScoreList);
         for(var i = 0; i < highScoreArray.length; i++){
-            var highScoreEntry = $("<div>");
+            var highScoreEntry = $("<li>");
             highScoreEntry.text(highScoreArray[i][0] + " - " + highScoreArray[i][1] + " seconds remaining on quiz " + highScoreArray[i][2] + " with " + highScoreArray[i][3] + " questions correct.")
             $("ol").append(highScoreEntry)
         }
@@ -114,22 +118,81 @@ function startTimer(){
     }, 1000)
 }
 function nextQuestion(){
-    //Load in next question and answers
-    $("h2").text(questionList[question]["title"]);
-    var choices = questionList[question]["choices"];
-    //shuffle.  Is there seriously not an existing function for this?
-    var answer = questionList[question]["answer"];
-    question++;
+    if(question<5) {
+        $("h2").text(questionList[question]["title"]);
+        var choices = questionList[question]["choices"];
+        choices = choices.sort(function(a, b){return 0.5 - Math.random()});
+        for(var i = 0; i < choices.length; i++){
+            $("#a" + i).text(choices[i]);
+        }
+        answer = questionList[question]["answer"];
+        question++;}
+    else{
+        status = 2;
+        navigate();
+    }
+    var countdown = 2;
     if(correct===true){
         score++;
-        //Load in "Correct" that will fade.
+        rightOrWrong.text("Correct!");
+        $("#content").append(rightOrWrong);
+        rightOrWrongTimer = setInterval(function(){
+            countdown--;
+            if(countdown==0){
+                clearInterval(rightOrWrongTimer);
+                $("h3").remove();
+            }
+        }, 1000)
     }
     else if(correct===false){
         time=time-15;
-        //Load in "Wrong!" that will fade.
+        rightOrWrong.text("Incorrect!");
+        $("#content").append(rightOrWrong);
+        rightOrWrongTimer = setInterval(function(){
+            countdown--;
+            if(countdown==0){
+                clearInterval(rightOrWrongTimer);
+                $("h3").remove();
+            }
+        }, 1000)
     }
 }
-
-//redo button and link event listeners with jQuery, make sure season selectors set season and question list
-
+$(".seasonButtons").on("click", function(){
+//Why isn't this working?
+    season = this.value;
+    questionList=allQuestions[season-1];
+    status = 1;
+    navigate();
+    nextQuestion();
+})
+$(".answerButtons").on("click", function(){
+    if(this.text() == answer){
+        correct=true;
+    }
+    else{
+        correct=false;
+    }
+    nextQuestion();
+})
+$(".submit").on("click", function(){
+    var score = [$(".entry").text(), time, season, score];
+    highScoreArray.push(score);
+    //sort by time
+    localStorage.setItem("scores", JSON.stringify(highScoreArray))
+    status = 3;
+    navigate();
+})
+$(".goBack").on("click", function(){
+    status = 0;
+    navigate();
+})
+$(".clearScores").on("click", function(){
+    highScoreArray=[]
+    localStorage.setItem("scores", JSON.stringify(highScoreArray))
+    $("li").remove();
+})
+$("a").on("click", function(){
+    status = 3;
+    navigate();
+})
 navigate();
