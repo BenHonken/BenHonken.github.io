@@ -14,11 +14,11 @@ So far it's all me.  I'll update this if and when that changes.
 
 ## Known Issues
 
-The second or third high score entry tends to break the list.  I'm not sure why.
+The second or third high score entry tends to break the list.  I'm not sure why.  - Update: fixed 10/13/19
 
-Leaving during the middle of the quiz may have unintended consequences with the timer.
+Leaving during the middle of the quiz may have unintended consequences with the timer.  - Update: fixed 10/13/19
 
-The layout of the buttons could be cleaned up to make it look and feel more consistent.
+The layout of the buttons could be cleaned up to make it look and feel more consistent.  - Update: fixed 10/13/19
 
 ## License
 

@@ -80,6 +80,7 @@ function navigate(){
         $("#content").append(questionText);
         for(var i = 0; i < answerButtons.length; i++){
             $("#content").append(answerButtons[i]);
+            $("#content").append($('<br>'));
         }
         nextQuestion();
     }
@@ -94,7 +95,9 @@ function navigate(){
     else{
         $("a").remove();
         $(".timer").remove();
+        $("h1").remove();
         $("h2").remove();
+        $("ol").remove();
         $(".explanation").remove();
         $("input").remove();
         $(".submit").remove();
@@ -103,8 +106,8 @@ function navigate(){
         $("#content").append(highScoreList);
         for(var i = 0; i < highScoreArray.length; i++){
             var highScoreEntry = $("<li>");
-            highScoreEntry.text(highScoreArray[i][0] + " - " + highScoreArray[i][1] + " seconds remaining on quiz " + highScoreArray[i][2] + " with " + highScoreArray[i][3] + " questions correct.")
-            $("ol").append(highScoreEntry)
+            highScoreEntry.text(highScoreArray[i]["name"] + " - " + highScoreArray[i]["time"] + " seconds remaining on quiz " + highScoreArray[i]["season"] + " with " + highScoreArray[i]["score"] + " questions correct.")
+            $("ol").prepend(highScoreEntry)
         }
         $("#content").append(goBack);
         $("#content").append(clearScores);
@@ -127,26 +130,13 @@ function navigate(){
                 nextQuestion();
             }
             else if(this.className == "submit"){
-                var result = [$("input").val(), time, season, score];
+                var result = {
+                    name:$("input").val(), time:time, season:season, score,score
+                };
                 highScoreArray.push(result);
-                console.log(highScoreArray);
-                console.log(highScoreArray.length);
-                var highScoreArrayLength=highScoreArray.length; 
-                var sortedArray=[];
-                if (highScoreArrayLength>0){
-                    while(sortedArray.length < highScoreArrayLength){
-                        for(var i = 0; i < highScoreArray.length; i++){
-                            topIndex = 0
-                            if(highScoreArray[topIndex][1]<highScoreArray[i][1]){
-                                topIndex = i;
-                            }
-                        }
-                        sortedArray.push(highScoreArray[topIndex]);
-                        highScoreArray.splice(topIndex);
-                    }
-                }
-                highScoreArray=sortedArray;
-                console.log(sortedArray);
+                highScoreArray.sort(function(a, b) {
+                    return a.time - b.time;
+                });
                 localStorage.setItem("scores", JSON.stringify(highScoreArray))
                 status = 3;
                 navigate();
@@ -177,6 +167,9 @@ function startTimer(){
             navigate();
         }
         if(status == 2){
+            clearInterval(timer);
+        }
+        if(status == 3){
             clearInterval(timer);
         }
     $(timerDiv).text(time);
