@@ -1,16 +1,24 @@
-# Ben Honken - Portfolio
+# Ben Honken - Trivia
 
 ## Description
 
-This is a portfolio for Ben Honken.  It contains a number of projects I have worked on, and I intend to update it regularly.  The first two pictures in the portfolio section are just place holders, but the last three are clickable links to working python projects.  This portfolio was made with some help from bootstrap!  It is responsive, and the images and containers will resize themselves according to your screen's width.  
+This is a Breaking Bad trivia game by Ben Honken.  It demonstrates ability to manipulate the DOM.  
 
 ## Usage
 
-You can use this to learn about Ben Honken and look at some of the things he has worked on.
+You can use this to test your Breaking Bad knowledge.
 
 ## Credits
 
 So far it's all me.  I'll update this if and when that changes.
+
+## Known Issues
+
+The second or third high score entry tends to break the list.  I'm not sure why.
+
+Leaving during the middle of the quiz may have unintended consequences with the timer.
+
+The layout of the buttons could be cleaned up to make it look and feel more consistent.
 
 ## License
 

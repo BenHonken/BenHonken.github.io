@@ -98,6 +98,7 @@ function navigate(){
         $(".explanation").remove();
         $("input").remove();
         $(".submit").remove();
+        $("button").remove();
         $("#content").append(highScoreHeader);
         $("#content").append(highScoreList);
         for(var i = 0; i < highScoreArray.length; i++){
