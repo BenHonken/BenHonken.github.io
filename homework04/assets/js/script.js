@@ -128,7 +128,6 @@ function nextQuestion(){
         for(var i = 0; i < choices.length; i++){
             var j = i + 1;
             $("#a" + j).text(choices[i]);
-            console.log(choices[i]);
         }
         answer = questionList[question]["answer"];
         question++;}
