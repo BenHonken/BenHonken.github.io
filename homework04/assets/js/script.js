@@ -52,6 +52,7 @@ goBack.text("Go Back");
 var clearScores = $("<button>");
 clearScores.addClass("clearScores");
 clearScores.text("Clear Scores");
+var topIndex = 0;
 function navigate(){
     if(status==0){
         $("ol").remove();
@@ -116,7 +117,6 @@ function navigate(){
                 navigate();
             }
             else if(this.className == "answerButtons"){
-                console.log(this.value)
                 if(this.value == answer){
                     correct=true;
                 }
@@ -128,7 +128,22 @@ function navigate(){
             else if(this.className == "submit"){
                 var result = [$("input").val(), time, season, score];
                 highScoreArray.push(result);
-                //sort by time
+                var highScoreArrayLength=highScoreArray.length; 
+                var sortedArray=[];
+                if (highScoreArrayLength>0){
+                    while(sortedArray.length < highScoreArrayLength){
+                        for(var i = 0; i < highScoreArray.length; i++){
+                            topIndex = 0
+                            if(highScoreArray[topIndex][1]<highScoreArray[i][1]){
+                                topIndex = i;
+                            }
+                        }
+                        sortedArray.push(highScoreArray[topIndex]);
+                        highScoreArray.splice(topIndex);
+                    }
+                }
+                highScoreArray=sortedArray;
+                console.log(sortedArray);
                 localStorage.setItem("scores", JSON.stringify(highScoreArray))
                 status = 3;
                 navigate();
