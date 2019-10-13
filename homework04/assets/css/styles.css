@@ -24,6 +24,7 @@
     color: #777777;
     background-color: #222222;
     overflow: auto;
+    height: 400px;
   }
   .timer{
     position: absolute;
@@ -68,10 +69,10 @@ a:hover{
   cursor: pointer;
 }
 footer{
-  position: absolute;
-  bottom: 0;
+  position: absolute !important;
+  bottom: 0 !important;
   background-color: black;
   color: #777777;
   width: 100%;
- text-align: center;
+  text-align: center;
 }
