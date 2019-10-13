@@ -93,7 +93,7 @@ function navigate(){
         $("a").remove();
         $(".timer").remove();
         $("h2").remove();
-        $("explanation").remove();
+        $(".explanation").remove();
         $("input").remove();
         $(".submit").remove();
         $("#content").append(highScoreHeader);
@@ -106,12 +106,52 @@ function navigate(){
         $("#content").append(goBack);
         $("#content").append(clearScores);
     }
+    $(document).ready(function(){
+        $("button").on("click", function(){
+            if(this.className == "seasonButtons"){
+                season = this.value;
+                questionList=allQuestions[season-1];
+                status = 1;
+                navigate();
+            }
+            else if(this.className == "answerButtons"){
+                if(this.text == answer){
+                    correct=true;
+                }
+                else{
+                    correct=false;
+                }
+                nextQuestion();
+            }
+            else if(this.className == "submit"){
+                var result = [$(".entry").val(), time, season, score];
+                highScoreArray.push(result);
+                //sort by time
+                localStorage.setItem("scores", JSON.stringify(highScoreArray))
+                status = 3;
+                navigate();
+            }
+            else if(this.className == "goBack"){
+                status = 0;
+                navigate();
+            }
+            else if(this.className == "clearScores"){
+                highScoreArray=[]
+                localStorage.setItem("scores", JSON.stringify(highScoreArray))
+                $("li").remove();
+            }
+        })
+        $("a").on("click", function(){
+            status = 3;
+            navigate();
+        })
+    })
 }
 function startTimer(){
     time=75
     timer=setInterval(function(){
         time--;
-        if(time===0 || question===5){
+        if(time===0 || status===2){
             clearInterval(timer);
             status=2;
             navigate();
@@ -124,7 +164,6 @@ function nextQuestion(){
         $("h2").text(questionList[question]["title"]);
         var choices = questionList[question]["choices"];
         choices = choices.sort(function(a, b){return 0.5 - Math.random()});
-        console.log(choices);
         for(var i = 0; i < choices.length; i++){
             var j = i + 1;
             $("#a" + j).text(choices[i]);
@@ -161,42 +200,4 @@ function nextQuestion(){
         }, 1000)
     }
 }
-$(document).ready(function(){
-    $(".seasonButtons").on("click", function(){
-        season = this.value;
-        questionList=allQuestions[season-1];
-        status = 1;
-        navigate();
-    })
-    $(".answerButtons").on("click", function(){
-        if(this.text() == answer){
-            correct=true;
-        }
-        else{
-            correct=false;
-        }
-        nextQuestion();
-    })
-    $(".submit").on("click", function(){
-        var score = [$(".entry").text(), time, season, score];
-        highScoreArray.push(score);
-        //sort by time
-        localStorage.setItem("scores", JSON.stringify(highScoreArray))
-        status = 3;
-        navigate();
-    })
-    $(".goBack").on("click", function(){
-        status = 0;
-        navigate();
-    })
-    $(".clearScores").on("click", function(){
-        highScoreArray=[]
-        localStorage.setItem("scores", JSON.stringify(highScoreArray))
-        $("li").remove();
-    })
-    $("a").on("click", function(){
-        status = 3;
-        navigate();
-    })
-})
 navigate();
