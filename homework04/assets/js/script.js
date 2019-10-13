@@ -38,6 +38,7 @@ var entry = $("<input>");
 entry.attr("placeholder", "initials");
 var submit = $("<button>");
 submit.addClass("submit");
+submit.text("Submit");
 var highScoreArray = JSON.parse(localStorage.getItem("scores"));
 if(highScoreArray===null){
     highScoreArray=[];
@@ -87,7 +88,6 @@ function navigate(){
         $("#content").append(submit);
     }
     else{
-        //Load High Score page, header, scores,  add "go back" and "clear scores" buttons, hide timer and high score link
         $("a").remove();
         $(".timer").remove();
         $("h2").remove();
@@ -122,8 +122,10 @@ function nextQuestion(){
         $("h2").text(questionList[question]["title"]);
         var choices = questionList[question]["choices"];
         choices = choices.sort(function(a, b){return 0.5 - Math.random()});
+        console.log(choices);
         for(var i = 0; i < choices.length; i++){
             $("#a" + i).text(choices[i]);
+            console.log(choices[i]);
         }
         answer = questionList[question]["answer"];
         question++;}
@@ -157,42 +159,52 @@ function nextQuestion(){
         }, 1000)
     }
 }
-$(".seasonButtons").on("click", function(){
-//Why isn't this working?
-    season = this.value;
-    questionList=allQuestions[season-1];
-    status = 1;
-    navigate();
-    nextQuestion();
+$(document).ready(function(){
+    $(".seasonButtons").on("click", function(){
+        season = this.value;
+        questionList=allQuestions[season-1];
+        status = 1;
+        navigate();
+    })
 })
-$(".answerButtons").on("click", function(){
-    if(this.text() == answer){
-        correct=true;
-    }
-    else{
-        correct=false;
-    }
-    nextQuestion();
+$(document).ready(function(){
+    $(".answerButtons").on("click", function(){
+        if(this.text() == answer){
+            correct=true;
+        }
+        else{
+            correct=false;
+        }
+        nextQuestion();
+    })
 })
-$(".submit").on("click", function(){
-    var score = [$(".entry").text(), time, season, score];
-    highScoreArray.push(score);
-    //sort by time
-    localStorage.setItem("scores", JSON.stringify(highScoreArray))
-    status = 3;
-    navigate();
+$(document).ready(function(){
+    $(".submit").on("click", function(){
+        var score = [$(".entry").text(), time, season, score];
+        highScoreArray.push(score);
+        //sort by time
+        localStorage.setItem("scores", JSON.stringify(highScoreArray))
+        status = 3;
+        navigate();
+    })
 })
-$(".goBack").on("click", function(){
-    status = 0;
-    navigate();
+$(document).ready(function(){
+    $(".goBack").on("click", function(){
+        status = 0;
+        navigate();
+    })
 })
-$(".clearScores").on("click", function(){
-    highScoreArray=[]
-    localStorage.setItem("scores", JSON.stringify(highScoreArray))
-    $("li").remove();
+$(document).ready(function(){
+    $(".clearScores").on("click", function(){
+        highScoreArray=[]
+        localStorage.setItem("scores", JSON.stringify(highScoreArray))
+        $("li").remove();
+    })
 })
-$("a").on("click", function(){
-    status = 3;
-    navigate();
+$(document).ready(function(){
+    $("a").on("click", function(){
+        status = 3;
+        navigate();
+    })
 })
 navigate();
