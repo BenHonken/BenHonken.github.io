@@ -12,12 +12,23 @@
     width: 960px;
     margin: 50px auto;
   }
-  .container {
+  .container{
     padding: 20px;
     margin: 20px auto;
-    background-color: #ffffff;
+    color: #777777;
+    background-color: #222222
     border-color: #dddddd;
     overflow: auto;
+  }
+  #content{
+    color: #777777;
+    background-color: #222222;
+    overflow: auto;
+  }
+  .timer{
+    position: absolute;
+    right: 0;
+    padding: 20px 20px;
   }
   h1 {
     margin-bottom: 20px;
@@ -35,39 +46,32 @@ h2{
 }
 input{
     padding: 5px 15px;
-    width: 100%;
+    width: 30%;
     font-size: 18px;
     line-height: 24px;
-}
-textarea{
-    padding: 5px 15px;
-    width: 100%;
-    height: 150px;
-    font-size: 18px;
-    line-height: 24px;
-    background-color: #222222;
-    color: #cccccc;
-    border: 2px solid #777777;
-    align-content: center;
+    margin: 20px 20px;
 }
 button{
-    background-color: orange;
+    background-color: green;
     color: #ffffff;
     font-size: 18px;
     line-height: 27px;
     border: 0;
     border-radius: 12px;
-    padding: 12px 30px;    
-}
-#copy{
-  background-color: green;
-  position: absolute;
-  right: 15px;
+    padding: 12px 30px;
+    margin: 20px 20px; 
 }
 button:hover{
     cursor: pointer;
 }
+a:hover{
+  cursor: pointer;
+}
 footer{
   position: absolute;
   bottom: 0;
+  background-color: black;
+  color: #777777;
+  width: 100%;
+ text-align: center;
 }
