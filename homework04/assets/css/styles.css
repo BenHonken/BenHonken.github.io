@@ -24,7 +24,6 @@
     color: #777777;
     background-color: #222222;
     overflow: auto;
-    height: 400px;
   }
   .timer{
     position: absolute;
@@ -60,7 +59,7 @@ button{
     border: 0;
     border-radius: 12px;
     padding: 12px 30px;
-    margin: 20px 20px; 
+    margin: 5px 20px; 
 }
 button:hover{
     cursor: pointer;
@@ -69,7 +68,7 @@ a:hover{
   cursor: pointer;
 }
 footer{
-  position: absolute !important;
+  position: fixed !important;
   bottom: 0 !important;
   background-color: black;
   color: #777777;
