@@ -2,11 +2,11 @@
 
 ## Description
 
-This is a simple calendar app by Ben Honken.  It demonstrates ability to manipulate the DOM and use moment.js.  
+This is a simple calendar app by Ben Honken.  It demonstrates ability to manipulate the DOM and use moment.js.  The workday will be displayed in one hour chunks.  Hours that have already passed will be gray, while hours that have not passed will be green.  The current hour will be red.  You can enter text in the slots and click the save button to save the events to specific hours.  This will save them to local storage so that they will be remembered on reload.  When a new day starts, all data will be wiped.  
 
 ## Usage
 
-You can use this to help plan your day.
+You can use this to help plan your day.  Enter your events in the text field and hit the blue save button to save them to local storage.  
 
 ## Credits
 
