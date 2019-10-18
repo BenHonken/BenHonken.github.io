@@ -54,7 +54,7 @@ function color(){
             i++;
         }
     }
-    else if(colorTime[1] == "a"){
+    else if(colorTime[1] == "a" || colorTime[2] == "a"){
         for(var i = 0; i < scheduleArray.length; i++){
             $("#" + i).addClass("future");
         }
@@ -73,7 +73,7 @@ $("button").on("click", function(){
     var savedEvent = {id: id, title: $("#" + id).val()};
     savedEvents.push(savedEvent);
     var stringifiedEvents = JSON.stringify(savedEvents);
-    localStorage.setItem("savedEvents", stringifiedEvents)
+    localStorage.setItem("savedEvents", stringifiedEvents);
     refresh();
     color();
 })
@@ -84,6 +84,8 @@ function refresh(){
         savedDate = currentDate;
         savedEvents = [];
         localStorage.setItem("savedDate", savedDate);
+        var stringifiedEvents = JSON.stringify(savedEvents);
+        localStorage.setItem("savedEvents", stringifiedEvents);
     }
     $("#currentDay").text(moment().format('dddd, MMMM Do'));
     for(var i = 0; i < savedEvents.length; i++){
