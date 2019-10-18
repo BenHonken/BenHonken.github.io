@@ -49,6 +49,7 @@ function color(){
             i++;
         }
         $("#" + i).addClass("present");
+        i++;
         while(i < 9){
             $("#" + i).addClass("future");
             i++;
