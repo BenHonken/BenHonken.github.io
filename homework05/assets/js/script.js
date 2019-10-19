@@ -3,6 +3,9 @@ var scheduleArray = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", 
 //load date
 var savedDate = localStorage.getItem("savedDate");
 var savedEvents = JSON.parse(localStorage.getItem("savedEvents"));
+if(savedEvents==null){
+    savedEvents = [];
+}
 //check time moment().format('h:mm:ss a')
 var currentTime = moment().format('h:mm:ss a');
 //load calendar with slot, time, input, and save button 
@@ -12,9 +15,11 @@ for(var i = 0; i < 9; i++){
     slot.addClass("row");
     var time = i + 9;
     var amPm = "AM"
+    if (time == 12){
+        amPm = "PM"
+    }
     if(time > 12){
         time = time - 12
-        amPm = "PM"
     }
     var timeString = time + ":00 " + amPm;
     var timeLabel = $("<div>");
@@ -80,18 +85,24 @@ $("button").on("click", function(){
 })
 //update date and time, moving time and refreshing at midnight moment().endOf('day').fromNow();
 function refresh(){
-    currentDate = moment().format('MMMM Do YYYY');
-    if(currentDate != savedDate){
-        savedDate = currentDate;
-        savedEvents = [];
-        localStorage.setItem("savedDate", savedDate);
-        var stringifiedEvents = JSON.stringify(savedEvents);
-        localStorage.setItem("savedEvents", stringifiedEvents);
-    }
-    $("#currentDay").text(moment().format('dddd, MMMM Do'));
     for(var i = 0; i < savedEvents.length; i++){
         $("#" + savedEvents[i].id).val(savedEvents[i].title);
     }
 }
+function rollover(){
+    savedDate = currentDate;
+    savedEvents = [];
+    localStorage.setItem("savedDate", savedDate);
+    var stringifiedEvents = JSON.stringify(savedEvents);
+    localStorage.setItem("savedEvents", stringifiedEvents);
+    $("#currentDay").text(moment().format('dddd, MMMM Do'));
+}
 refresh();
 color();
+timer=setInterval(function(){
+    currentDate = moment().format('MMMM Do YYYY');
+    if(currentDate != savedDate){
+        rollover();
+    }
+    color()
+}, 1000)
