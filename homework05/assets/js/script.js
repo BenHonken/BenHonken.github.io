@@ -99,6 +99,7 @@ function rollover(){
 }
 refresh();
 color();
+$("#currentDay").text(moment().format('dddd, MMMM Do'));
 timer=setInterval(function(){
     currentDate = moment().format('MMMM Do YYYY');
     if(currentDate != savedDate){
