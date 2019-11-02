@@ -1,4 +1,4 @@
-var proxy = "http://www.chriscastle.com/proxy/thecocktaildb.php?:proxy:";
+var proxy = "https://www.chriscastle.com/proxy/thecocktaildb.php?:proxy:";
 var ingredient = JSON.parse(localStorage.getItem("alcohol"));
 var drinkSearch = $("#tequilaBox");
 var drinkArray = [];

@@ -1,4 +1,4 @@
-var queryURL = "http://taco-randomizer.herokuapp.com/random/";
+var queryURL = "https://taco-randomizer.herokuapp.com/random/";
 var layers = ["shell", "base_layer", "seasoning", "mixin", "condiment"];
 var layersUpper = ["Shell", "Base", "Seasoning", "Mixin", "Condiment"];
 var descriptionFragments = ["Wrapped in delicious ", ", you'll be enjoying ", " with ", " garnished with ", ", and topped off with "];
