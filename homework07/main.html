@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/> -->
+    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <title>Tacos & Tequila</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #f7c063;">
+      <a class="navbar-brand animated delay flash">Let's Taco 'bout It</a>
+      <form class="form-inline" action="favorites.html">
+          <button class="btn btn-lg btn-outline-success my-2 my-sm-0 animated delay rubberBand " type="submit"><a class="bnt-text" href="favorites.html">Favorites</a></button>
+      </form>
+  </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5" id="tacoHeader">Fantasy Taco Maker</div>
+            <div class="col-sm-2"></div>
+            <div class="col-md-5" id="tequilaHeader">Tequila Feels...</div>    
+        </div>
+
+        <div class="row">
+            <div class="col-md-5" id="tacoBox">
+                <img id="newTaco" src="images/taco.png">
+            </div>
+            <div class="col-sm-2" id="emptyBox"></div>
+            <div class="col-md-5" id="tequilaBox"></div>
+        </div>
+
+        <div class="footer">
+          <p><small>Copyright &copy; 2019 Team Friends</small></p>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="scripttaco.js"></script>
+    <script src="scriptdrink.js"></script>
+<script>
+$('button').click(function() {
+    $('section').addClass('animated shake');
+});
+
+$('button').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd animationend animationend', function() {
+  $('button').addClass('delay pulse');
+});
+
+
+</script>
+  </body>
+</html>
