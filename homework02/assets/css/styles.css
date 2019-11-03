@@ -156,6 +156,14 @@ button{
 button:hover{
     cursor: pointer;
 }
+.bottomLinks{
+  color: blue !important;
+  text-decoration: underline;
+}
+.bottomLinks:visited{
+  color: blue !important;
+  text-decoration: underline;
+}
 footer {
   text-align: center;
   width: 100%;
