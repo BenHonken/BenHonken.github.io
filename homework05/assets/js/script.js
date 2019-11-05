@@ -20,6 +20,7 @@ for(var i = 0; i < 9; i++){
     }
     if(time > 12){
         time = time - 12
+        amPm = "PM"
     }
     var timeString = time + ":00 " + amPm;
     var timeLabel = $("<div>");
