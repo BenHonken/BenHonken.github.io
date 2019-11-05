@@ -176,6 +176,9 @@ footer {
   position: relative;
   bottom: 0;
 }
+.footer {
+  position: absolute;
+}
 @media screen and (max-width: 576px) {
   .wrapper {
     width: 100%;
