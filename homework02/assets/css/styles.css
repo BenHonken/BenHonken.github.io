@@ -157,11 +157,15 @@ button:hover{
     cursor: pointer;
 }
 .bottomLinks{
-  color: blue !important;
+  font-size: 24px;
+  line-height: 32px;
+  color: #777777;
   text-decoration: underline;
 }
 .bottomLinks:visited{
-  color: blue !important;
+  font-size: 24px;
+  line-height: 32px;
+  color: #777777;
   text-decoration: underline;
 }
 footer {
@@ -175,9 +179,6 @@ footer {
   line-height: 24px;
   position: relative;
   bottom: 0;
-}
-.footer {
-  position: absolute;
 }
 @media screen and (max-width: 576px) {
   .wrapper {
