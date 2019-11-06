@@ -5,15 +5,15 @@
   body {
     font-size: 24px;
     line-height: 32px;
-    color: #777777;
+    color: darkorange;
     background-image: url(../images/background.png);
   }
   hr{
-    border-top: 2px solid #777777      
+    border-top: 2px solid #fab95b      
   }
   nav {
       width: 100%;
-      background-color: #ffffff;
+      background-color: #e8e2db;
       border-color: #cccccc;
       position: absolute;
       top: 0;
@@ -40,17 +40,17 @@
       padding: 20px;
   }
   .nav-link{
-    color: #777777;
+    color: #1a3263;
   }
 a:visited{
-    color: #777777 !important;
+    color: #1a3263 !important;
     text-decoration: none;
     font-size: 18px;
   }
 a {
     text-decoration: none;
     font-size: 18px;
-    color: #777777 !important;
+    color: #1a3263 !important;
 }
   #navbuttoncontainer{
       float: right;
@@ -60,10 +60,10 @@ a {
       margin: 0 auto;
   }
   .bg-light{
-    background-color: #ffffff !important;
+    background-color: #e8e2db !important;
   }
   .vr{
-    border-left: 2px solid #777777;
+    border-left: 2px solid #fab95b;
     float: left;
     height: 60px;
     position: relative;
@@ -71,9 +71,9 @@ a {
   }
   #name{
     font-family: 'Georgia', Times, 'Times New Roman', serif;
-    background-color: #4aaaa5;
+    background-color: darkorange;
     padding: 20px;
-    color: #ffffff;
+    color: #e8e2db;
     float: left;
     position: absolute;
     bottom: 0;
@@ -86,7 +86,7 @@ a {
   .container {
     padding: 20px;
     margin: 20px auto;
-    background-color: #ffffff;
+    background-color: #e8e2db;
     border-color: #dddddd;
     overflow: auto;
   }
@@ -94,8 +94,8 @@ a {
     margin-bottom: 20px;
     font-size: 36px;
     line-height: 45px;
-    color: #4aaaa5;
-    background-color: #ffffff;
+    color: darkorange;
+    background-color: #e8e2db;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
   }
   p {
@@ -118,8 +118,8 @@ a {
     height: 30%;
     padding: 5px;
     text-align: center;
-    background-color: #4aaaa5;
-    color: #ffffff;
+    background-color: darkorange;
+    color: #e8e2db;
     position: relative;
     max-width: 100% !important;
     bottom: 100px;
@@ -146,8 +146,8 @@ textarea{
     line-height: 24px;
 }
 button{
-    background-color: #4aaaa5;
-    color: #ffffff;
+    background-color: darkorange;
+    color: #e8e2db;
     font-size: 18px;
     line-height: 27px;
     border: 0;
@@ -159,22 +159,22 @@ button:hover{
 .bottomLinks{
   font-size: 24px;
   line-height: 32px;
-  color: #777777;
+  color: #1a3263;
   text-decoration: underline;
 }
 .bottomLinks:visited{
   font-size: 24px;
   line-height: 32px;
-  color: #777777;
+  color: #1a3263;
   text-decoration: underline;
 }
 footer {
   text-align: center;
   width: 100%;
-  border-top: 8px solid #4aaaa5;
-  background-color: #666666;
+  border-top: 8px solid darkorange;
+  background-color: #1a3263;
   padding: 20px;
-  color: #ffffff;
+  color: #e8e2db;
   font-size: 16px;
   line-height: 24px;
   position: relative;
