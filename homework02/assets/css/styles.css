@@ -41,6 +41,7 @@
   }
   .nav-link{
     color: #1a3263;
+    align-content: center;
   }
 a:visited{
     color: #1a3263 !important;
@@ -167,6 +168,10 @@ button:hover{
   line-height: 32px;
   color: #1a3263;
   text-decoration: underline;
+}
+#statlink{
+  position: relative; 
+  bottom: 28px;
 }
 footer {
   text-align: center;
