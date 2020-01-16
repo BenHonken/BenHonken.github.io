@@ -5,15 +5,15 @@
   body {
     font-size: 24px;
     line-height: 32px;
-    color: darkorange;
-    background-image: url(../images/background.png);
+    color: orange;
+    background-image: url(../images/background.jpg);
   }
   hr{
-    border-top: 2px solid #fab95b      
+    border-top: 2px solid orange      
   }
   nav {
       width: 100%;
-      background-color: #e8e2db;
+      background-color: #1a3263;
       border-color: #cccccc;
       position: absolute;
       top: 0;
@@ -40,18 +40,18 @@
       padding: 20px;
   }
   .nav-link{
-    color: #1a3263;
+    color: orange;
     align-content: center;
   }
 a:visited{
-    color: #1a3263 !important;
+    color: orange !important;
     text-decoration: none;
     font-size: 18px;
   }
 a {
     text-decoration: none;
     font-size: 18px;
-    color: #1a3263 !important;
+    color: orange !important;
 }
   #navbuttoncontainer{
       float: right;
@@ -61,10 +61,10 @@ a {
       margin: 0 auto;
   }
   .bg-light{
-    background-color: #e8e2db !important;
+    background-color: #1a3263 !important;
   }
   .vr{
-    border-left: 2px solid #fab95b;
+    border-left: 2px solid orange;
     float: left;
     height: 60px;
     position: relative;
@@ -72,9 +72,9 @@ a {
   }
   #name{
     font-family: 'Georgia', Times, 'Times New Roman', serif;
-    background-color: darkorange;
+    background-color: orange;
     padding: 20px;
-    color: #e8e2db;
+    color: #1a3263;
     float: left;
     position: absolute;
     bottom: 0;
@@ -87,17 +87,21 @@ a {
   .container {
     padding: 20px;
     margin: 20px auto;
-    background-color: #e8e2db;
+    background-color: #1a3263;
     border-color: #dddddd;
     overflow: auto;
+  }
+  .portfolioContainer {
+    text-align: center;
   }
   h1 {
     margin-bottom: 20px;
     font-size: 36px;
     line-height: 45px;
-    color: darkorange;
-    background-color: #e8e2db;
+    color: orange;
+    background-color: #1a3263;
     font-family: 'Georgia', Times, 'Times New Roman', serif;
+    text-align: center;
   }
   p {
     margin-bottom: 20px;
@@ -119,8 +123,8 @@ a {
     height: 30%;
     padding: 5px;
     text-align: center;
-    background-color: darkorange;
-    color: #e8e2db;
+    background-color: orange;
+    color: white;
     position: relative;
     max-width: 100% !important;
     bottom: 100px;
@@ -147,7 +151,7 @@ textarea{
     line-height: 24px;
 }
 button{
-    background-color: darkorange;
+    background-color: orange;
     color: #e8e2db;
     font-size: 18px;
     line-height: 27px;
@@ -160,14 +164,16 @@ button:hover{
 .bottomLinks{
   font-size: 24px;
   line-height: 32px;
-  color: #1a3263;
+  color: orange;
   text-decoration: underline;
+  text-align: center;
 }
 .bottomLinks:visited{
   font-size: 24px;
   line-height: 32px;
-  color: #1a3263;
+  color: orange;
   text-decoration: underline;
+  text-align: center;
 }
 #statlink{
   position: relative; 
@@ -176,7 +182,7 @@ button:hover{
 footer {
   text-align: center;
   width: 100%;
-  border-top: 8px solid darkorange;
+  border-top: 8px solid orange;
   background-color: #1a3263;
   padding: 20px;
   color: #e8e2db;
@@ -184,6 +190,16 @@ footer {
   line-height: 24px;
   position: relative;
   bottom: 0;
+}
+.contactBottom{
+  margin: 40px auto 0 auto;
+  text-align: center;
+}
+.contactMid{
+  margin: 40px auto 20px auto;
+  border-left: 2px solid orange;
+  border-right: 2px solid orange;
+  text-align: center;
 }
 @media screen and (max-width: 576px) {
   .wrapper {
