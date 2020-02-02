@@ -7,6 +7,7 @@
     line-height: 32px;
     color: orange;
     background-image: url(../images/background.jpg);
+    background-size: contain;
   }
   hr{
     border-top: 2px solid orange      
@@ -46,11 +47,11 @@
 a:visited{
     color: orange !important;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
   }
 a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 24px;
     color: orange !important;
 }
   #navbuttoncontainer{
