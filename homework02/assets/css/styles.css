@@ -202,6 +202,10 @@ footer {
   border-right: 2px solid orange;
   text-align: center;
 }
+.pushFooter{
+  flex: 1 0 auto;
+  height: 90vh;
+}
 @media screen and (max-width: 576px) {
   .wrapper {
     width: 100%;
@@ -209,6 +213,7 @@ footer {
   footer{
     font-size: 12px;
     line-height: 18px;
+    flex-shrink: 0;
   }
   #name{
     visibility: hidden;
